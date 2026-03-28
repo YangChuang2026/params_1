@@ -3,7 +3,7 @@ from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_community.vectorstores import FAISS
 
-# ===================== 你已经写好的分块函数（直接复用） =====================
+# ===================== 已经写好的分块函数 =====================
 def split_text(file_path):
     with open(file_path, 'r', encoding='utf-8') as f:
         text = f.read()
@@ -16,7 +16,7 @@ def split_text(file_path):
     return text_splitter.create_documents([text])
 
 
-# ===================== 向量化与存储（你的两个文件） =====================
+# ===================== 向量化与存储 =====================
 # 1. 初始化嵌入模型
 embeddings = HuggingFaceEmbeddings(model_name='sentence-transformers/all-MiniLM-L6-v2')
 
